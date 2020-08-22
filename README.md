@@ -1,2 +1,2 @@
-# ScriptsForDeveloper
-Scripts you may needed as a developer
+# Scripts for Android Developer
+Scripts you may needed as an Android developer.
