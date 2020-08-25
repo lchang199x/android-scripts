@@ -19,17 +19,17 @@ alias act="adb shell dumpsys window | grep mCurrentFocus"
 alias installr="adb install -r ~/Workspace/<PROJECT>/app/build/outputs/apk/release/app-release.apk"
 # install debug apk
 alias installd="adb install -r ~/Workspace/<PROJECT>/app/build/outputs/apk/debug/app-debug.apk"
-# uninstall the <PACKAGE>
-alias uni="adb uninstall <PACKAGE>"
+# uninstall the <PACKAGE>, assume your app name starts with x-
+alias unix="adb uninstall <PACKAGE>"
 
 # start
-alias start="adb shell am start -n <PACKAGE>/<LAUNCHER_ACTIVITY>"
+alias startx="adb shell am start -n <PACKAGE>/<LAUNCHER_ACTIVITY>"
 # stop
-alias stop="adb shell am force-stop <PACKAGE>"
+alias stopx="adb shell am force-stop <PACKAGE>"
 # restart
-alias restart="adb shell am start -S <PACKAGE>/<LAUNCHER_ACTIVITY>"
+alias restartx="adb shell am start -S <PACKAGE>/<LAUNCHER_ACTIVITY>"
 # delete all data
-alias clear="adb shell pm clear <PACKAGE>"
+alias clearx="adb shell pm clear <PACKAGE>"
 
 # git related
 alias st = "git status"
