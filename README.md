@@ -1,2 +1,2 @@
 # Scripts for Android Developers
-Scripts you may needed as an Android developer.
+Scripts you may need as an Android developer.
