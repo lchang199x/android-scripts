@@ -20,7 +20,7 @@ alias hist="adb shell dumpsys activity activities | grep $PACKAGE | grep Hist"
 # find the top activity
 alias act="adb shell dumpsys window | grep mCurrentFocus"
 # capture screen display & open the image
-alias cap="adb shell screencap -p > ~/Desktop/screenshot.png && open ~/Desktop/screenshot.png
+alias cap="adb shell screencap -p > ~/Desktop/screenshot.png && open ~/Desktop/screenshot.png"
 
 # install release apk
 alias installr="adb install -r ~/Workspace/$PROJECT/app/build/outputs/apk/release/app-release.apk"
@@ -43,6 +43,6 @@ alias st = "git status"
 alias amend="git commit --amend --no-edit"
 
 # environment variables
-export JAVA_HOME=/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
