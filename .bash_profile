@@ -34,3 +34,8 @@ alias clearx="adb shell pm clear <PACKAGE>"
 # git related
 alias st = "git status"
 alias amend="git commit --amend --no-edit"
+
+# environment variables
+export JAVA_HOME=/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${JAVA_HOME}/bin:${ANDROID_HOME}/platform-tools:$PATH
