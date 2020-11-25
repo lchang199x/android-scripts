@@ -1,4 +1,4 @@
-# Useful Aliases in Startup File (MacOS)
+# Useful Configuration in Startup File (MacOS)
 
 # list all contents including hidden ones
 alias la="ls -A"
@@ -14,6 +14,8 @@ alias cdw="cd ~/Workspace"
 alias hist="adb shell dumpsys activity activities | grep <PACKAGE> | grep Hist"
 # find the top activity
 alias act="adb shell dumpsys window | grep mCurrentFocus"
+# capture screen display & open the image
+alias cap="adb shell screencap -p > ~/Desktop/screenshot.png && open ~/Desktop/screenshot.png
 
 # install release apk
 alias installr="adb install -r ~/Workspace/<PROJECT>/app/build/outputs/apk/release/app-release.apk"
