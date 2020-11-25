@@ -10,28 +10,33 @@ alias cdd="cd ~/Desktop"
 # Workspace is where I always put my <PROJECT>
 alias cdw="cd ~/Workspace"
 
+# replace PROJECT & PACKAGE with your own
+export PROJECT=bar
+export PACKAGE=com.foo.bar
+export LAUNCHER_ACTIVITY=.FooBarActivity
+
 # list the running activities of a <PACKAGE>
-alias hist="adb shell dumpsys activity activities | grep <PACKAGE> | grep Hist"
+alias hist="adb shell dumpsys activity activities | grep $PACKAGE | grep Hist"
 # find the top activity
 alias act="adb shell dumpsys window | grep mCurrentFocus"
 # capture screen display & open the image
 alias cap="adb shell screencap -p > ~/Desktop/screenshot.png && open ~/Desktop/screenshot.png
 
 # install release apk
-alias installr="adb install -r ~/Workspace/<PROJECT>/app/build/outputs/apk/release/app-release.apk"
+alias installr="adb install -r ~/Workspace/$PROJECT/app/build/outputs/apk/release/app-release.apk"
 # install debug apk
-alias installd="adb install -r ~/Workspace/<PROJECT>/app/build/outputs/apk/debug/app-debug.apk"
+alias installd="adb install -r ~/Workspace/$PROJECT/app/build/outputs/apk/debug/app-debug.apk"
 # uninstall the <PACKAGE>, assume your app name starts with x-
-alias unix="adb uninstall <PACKAGE>"
+alias unix="adb uninstall $PACKAGE"
 
 # start
-alias startx="adb shell am start -n <PACKAGE>/<LAUNCHER_ACTIVITY>"
+alias startx="adb shell am start -n $PACKAGE/$LAUNCHER_ACTIVITY"
 # stop
-alias stopx="adb shell am force-stop <PACKAGE>"
+alias stopx="adb shell am force-stop $PACKAGE"
 # restart
-alias restartx="adb shell am start -S <PACKAGE>/<LAUNCHER_ACTIVITY>"
+alias restartx="adb shell am start -S $PACKAGE/$LAUNCHER_ACTIVITY"
 # delete all data
-alias clearx="adb shell pm clear <PACKAGE>"
+alias clearx="adb shell pm clear $PACKAGE"
 
 # git related
 alias st = "git status"
@@ -40,4 +45,4 @@ alias amend="git commit --amend --no-edit"
 # environment variables
 export JAVA_HOME=/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home
 export ANDROID_HOME=~/Library/Android/sdk
-export PATH=${JAVA_HOME}/bin:${ANDROID_HOME}/platform-tools:$PATH
+export PATH=$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
