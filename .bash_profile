@@ -25,7 +25,7 @@ alias cap="adb shell screencap -p > ~/Desktop/screenshot.png && open ~/Desktop/s
 # install release apk
 alias installr="adb install -r ~/Workspace/$PROJECT/app/build/outputs/apk/release/app-release.apk"
 # install debug apk
-alias installd="adb install -r ~/Workspace/$PROJECT/app/build/outputs/apk/debug/app-debug.apk"
+alias installd="adb install -r -t ~/Workspace/$PROJECT/app/build/outputs/apk/debug/app-debug.apk"
 # uninstall the <PACKAGE>, assume your app name starts with x-
 alias unix="adb uninstall $PACKAGE"
 
@@ -38,9 +38,13 @@ alias restartx="adb shell am start -S $PACKAGE/$LAUNCHER_ACTIVITY"
 # delete all data
 alias clearx="adb shell pm clear $PACKAGE"
 
+# input text via adb
+alias input="adb shell input text"
+
 # git related
 alias st = "git status"
 alias amend="git commit --amend --no-edit"
+alias lg1="git log --oneline"
 
 # environment variables
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
