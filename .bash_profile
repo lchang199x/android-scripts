@@ -21,6 +21,8 @@ alias hist="adb shell dumpsys activity activities | grep $PACKAGE | grep Hist"
 alias act="adb shell dumpsys window | grep mCurrentFocus"
 # capture screen display & open the image
 alias cap="adb shell screencap -p > ~/Desktop/screenshot.png && open ~/Desktop/screenshot.png"
+# goto launcher
+alias launcher="adb shell am start -n com.android.launcher3/com.android.launcher3.Launcher && adb shell input keyevent KEYCODE_HOME"
 
 # install release apk
 alias installr="adb install -r ~/Workspace/$PROJECT/app/build/outputs/apk/release/app-release.apk"
@@ -40,6 +42,8 @@ alias clearx="adb shell pm clear $PACKAGE"
 
 # input text via adb
 alias input="adb shell input text"
+# input keyevent via adb
+alias event="adb shell input keyevent"
 
 # git related
 alias st = "git status"
