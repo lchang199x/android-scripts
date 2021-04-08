@@ -44,6 +44,8 @@ alias clearx="adb shell pm clear $PACKAGE"
 alias input="adb shell input text"
 # input keyevent via adb
 alias event="adb shell input keyevent"
+# start app details settings page
+alias detail="adb shell am start -a android.settings.APPLICATION_DETAILS_SETTINGS -d package:"
 
 # git related
 alias st = "git status"
