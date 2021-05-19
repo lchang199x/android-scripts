@@ -48,7 +48,7 @@ alias input="adb shell input text"
 alias event="adb shell input keyevent"
 
 # git related
-alias st = "git status"
+alias st="git status"
 alias amend="git commit --amend --no-edit"
 alias lg1="git log --oneline"
 
