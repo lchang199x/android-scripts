@@ -10,7 +10,7 @@ alias cdd="cd ~/Desktop"
 # Workspace is where I always put my <PROJECT>
 alias cdw="cd ~/Workspace"
 
-# replace PROJECT & PACKAGE with your own
+# replace PROJECT, PACKAGE & LAUNCHER_ACTIVITY with your own
 export PROJECT=bar
 export PACKAGE=com.foo.bar
 export LAUNCHER_ACTIVITY=.FooBarActivity
@@ -27,8 +27,8 @@ alias launcher="adb shell am start -n com.android.launcher3/com.android.launcher
 # install release apk
 alias installr="adb install -r ~/Workspace/$PROJECT/app/build/outputs/apk/release/app-release.apk"
 # install debug apk
-alias installd="adb install -r -t ~/Workspace/$PROJECT/app/build/outputs/apk/debug/app-debug.apk"
-# uninstall the <PACKAGE>, assume your app name starts with x-
+alias installd="adb install -r -g -t ~/Workspace/$PROJECT/app/build/outputs/apk/debug/app-debug.apk"
+# uninstall the <PACKAGE>, assume <PROJECT> starts with x-
 alias unix="adb uninstall $PACKAGE"
 
 # start
@@ -46,6 +46,13 @@ alias detail="adb shell am start -a android.settings.APPLICATION_DETAILS_SETTING
 alias input="adb shell input text"
 # input keyevent via adb
 alias event="adb shell input keyevent"
+# simulate back button click, 'adb shell input keyevent 4' also works
+alias back="adb shell input keyevent KEYCODE_BACK"
+
+# get serial number
+alias sn="adb shell getprop ro.serialno"
+# get tcp port for adb, default to 5555
+alias port="getprop service.adb.tcp.port"
 
 # git related
 alias st="git status"
@@ -56,3 +63,6 @@ alias lg1="git log --oneline"
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
+
+# enable git auto completion, get the file from https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+source ~/.git-completion.bash
